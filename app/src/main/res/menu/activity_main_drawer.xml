@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+<!--change drawer details as per u r need-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/MyProfile"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title= "My Profile"/>
+        <item
+            android:id="@+id/MYPost"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="My Post" />
+        <item
+            android:id="@+id/vouchers"
+            android:icon="@drawable/ic_card_giftcard_black_24dp"
+            android:title="My Vouchers" />
+
+        <item
+            android:id="@+id/addpost"
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="Add Post" />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="About Us" />
+        <item
+            android:id="@+id/log"
+            android:icon="@drawable/ic_vpn_key_black_24dp"
+            android:title="Log Out" />
+
+
+    </group>
+
+
+</menu>
+
+

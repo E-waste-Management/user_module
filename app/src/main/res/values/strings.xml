@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">user_module</string>
+    <string-array name="cat">
+        <item> Computer Accessories </item>
+
+
+        <item> Home Appliance </item>
+        <item>  Electronic  devices </item>
+
+    </string-array>
+    <string-array name="comp">
+        <item> Mother board </item>
+        <item> CPU </item>
+        <item> Mouse/Keyboard</item>
+        <item> Hard disk</item>
+        <item> Monitor</item>
+        <item> RAM </item>
+        <item> Pendrive </item>
+        <item> other </item>
+    </string-array>
+    <string-array name="ict">
+        <item> Printer </item>>
+        <item> Cabinate </item>
+        <item> Camera </item>
+        <item> Adapter </item>
+        <item> Silver foil</item>
+        <item> Projector</item>
+        <item> others </item>
+    </string-array>
+    <string-array name="mob">
+        <item>Battery </item>
+        <item> MObile Pouch </item>
+        <item> SD Cards </item>
+        <item>Head Phones </item>
+        <item>Card Reader </item>
+        <item> Other</item>
+    </string-array>
+    <string-array name="Customer">
+        <item> Amplifier</item>
+        <item> CD </item>
+        <item>DVD</item>
+        <item>Loud Speaker</item>
+        <item>Remotes</item>
+        <item>Set Top Box</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="Home">
+        <item>Fan</item>
+        <item>AC</item>
+        <item>Vaccum Cleaner</item>
+        <item>Microwe Oven</item>
+        <item>Cloth iron</item>
+        <item>Washing Machine</item>
+        <item>T.V</item>
+        <item>Refrigrator</item>
+        <item>other</item>
+
+
+    </string-array>
+    <string-array name="electronic">
+        <item>Laptop</item>
+        <item>Computer</item>
+        <item>Mobile</item>
+        <item>other</item>
+
+
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
