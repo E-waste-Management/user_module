@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".About_us">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VISION
+
+E-KABADIWALA Environment Ltd. is a company committed to complete
+environment friendly recycling of electronic waste ,registred
+with Maharahtra pollution Control Board.E-KABADIWALA has signed MOU with the
+Government of Maharahtra for setting up this sophisticated environment friendly recycling
+facility"
+        android:layout_marginTop="20dp"
+        android:id="@+id/vision"/>
+
+    <TextView
+        android:id="@+id/Values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="VALUES
+
+E-KABADIWALA Environment Ltd. is an ISO 9001,ISO 14001,and OHAS 18001 certified company that faclitates the integration
+of quality ,environment and occupational healthy and safety management sysytem of organization.ECS Environment Ltd.
+is registered by Maharashtra POllution control board and also
+approved by Ministry of environment,Forest and Climate Change,New Delhi" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/about"
+        android:layout_marginTop="20dp"
+        android:text="ABOUT US
+
+E-KABADIWALA is the only organization that follows current government policies for E-waste "/>
+</LinearLayout>
