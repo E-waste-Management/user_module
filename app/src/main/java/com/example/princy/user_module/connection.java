@@ -55,7 +55,7 @@ public class connection {
 
             @Override
             public String getBodyContentType() {
-                return "application/x-www-form-urlencoded; charset=utf-8";
+                return "application/json; charset=utf-8";
             }
 
             @Override

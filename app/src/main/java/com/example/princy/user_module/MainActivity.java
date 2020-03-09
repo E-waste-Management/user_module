@@ -1,12 +1,10 @@
 package com.example.princy.user_module;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,22 +22,25 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.content.SharedPreferences;
 
 import java.util.Date;
 import java.util.HashMap;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.util.Map;
 import java.util.Vector;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
 
 
 public class MainActivity extends AppCompatActivity
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity
     private Intent data;
     private String pictureFile;
     ProgressBar loading;
+    Object b1,b2,b3;
    // final String URL="C:\\wamp64\\www\\user_module\\api.php";
     EditText pd;
     int count = 0;
@@ -182,7 +184,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void UploadImage(Object b1, Object b2 , Object b3, String phone,int p,long order_id) {
+    public void UploadImage(final Object b1, final Object b2 , Object b3, String phone, int p, long order_id) {
         Log.d("upload","upload var aala aapan" );
         Log.d("miss","miss"+b1);
         getIp ip = new getIp();
@@ -191,17 +193,44 @@ public class MainActivity extends AppCompatActivity
         String quan = edtquan.getText().toString();
         String subcat = cat2.getText().toString();
         String cat = cat1.getSelectedItem().toString();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+              //  Log.d("str_register","nilesh on response"+requestBody);
+                Log.d("response", "response"+response);
+             //   volleyCallback.onSuccessResponse(response);
+            }
+        }, new Response.ErrorListener() {
+
+            public void onErrorResponse(VolleyError error) {
+               // volleyCallback.onErrorResponse(error);
+            }
+        })  {
+           protected Map<String, Object> getparams() throws AuthFailureError{
+               Map<String,Object> params = new HashMap<>();
+               String mregister = "morder";
+               params.put("images",b1);
+               params.put("images1",b2);
+               params.put("mregister",mregister);
+                 Log.d("str_register","onee"+params);
 
 
 
-        Log.d("bitmap","bitmap");
+               return params; }
+
+        } ;
+        RequestQueue requestQueue1 = Volley.newRequestQueue(MainActivity.this);
+              requestQueue1.add(stringRequest);
+
+
+
+                Log.d("bitmap","bitmap");
         Log.d("dfdfusdf", "dfksdfd "+ten);
         Log.d("love","image nahi milega"+b2);
         Log.d("princy","image nahi mila"+b3);
         Log.d("je","jeni"+cat);
         Log.d("elsa","elsa"+order_id);
         Log.d("meee","meee"+p);
-
 
 
 
@@ -223,7 +252,7 @@ public class MainActivity extends AppCompatActivity
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("product_desc", ten);
-            jsonObject.put("images",b1);
+
             jsonObject.put("phone",phone);
             jsonObject.put("quantity",quan);
           //  jsonObject.put("images1",b2);
@@ -232,8 +261,10 @@ public class MainActivity extends AppCompatActivity
             jsonObject.put("subcatgory",subcat);
             jsonObject.put("product_id",p);
             jsonObject.put("order_id",order_id);
+            jsonObject.put("images",b1);
             jsonObject.put("mregister", mregister);
             Log.d("lln", "json"+jsonObject);
+            System.out.print(jsonObject);
 
 
 
